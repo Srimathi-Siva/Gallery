@@ -24,8 +24,7 @@ Publish the website in the given URL.
 
 # PROGRAM :
 ```
-home.html
-
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,20 +35,20 @@ home.html
 </head>
 <body>
     <header>
-        <h1>BIRDS</h1>
+        <h1>FLOWERS</h1>
     </header>
     <div class="gallery">
         <div class="gallery-item" onclick="openModal(this)">
-            <img src="1.jpg" height="200px" width="350px">
+            <img src="lotus.jpg" >
         </div>
         <div class="gallery-item" onclick="openModal(this)">
-            <img src="2.jpg"  height="200px" width="350px" >
+            <img src="rose.jpg"  >
         </div>
         <div class="gallery-item" onclick="openModal(this)">
-            <img src="3.jpg" height="200px" width="350px" >
+            <img src="sunflower.jpg" >
         </div>
         <div class="gallery-item" onclick="openModal(this)">
-            <img src="4.jpeg" height="200px" width="350px" >
+            <img src="waterlily.jpg" >
         </div>
     </div>
 
@@ -63,38 +62,91 @@ home.html
 </body>
 </html>
 
-style.css
-
+CSS
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    min-height: 100vh;
 }
 
-header {
+header h1 {
+    margin: 40px 0;
+    color: #333;
+    font-size: 2rem;
     text-align: center;
-    padding: 20px;
-    background-color: #f4f4f4;
+    font-weight: bold;
+    font-family: cursive;
 }
 
 .gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;         
-    gap: 10px;               
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    max-width: 90%;
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
 }
 
 .gallery-item img {
-    width: 200px; 
-    height: 150;
+    width: 100%;
+    height: 150px; /* Fixed height for equal size */
+    object-fit: cover; /* Ensures images maintain aspect ratio while filling the space */
+    border-radius: 8px;
     cursor: pointer;
-    border: 2px solid #ccc;
-    border-radius: 5px;
     transition: transform 0.3s ease;
 }
 
-style.js
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#caption {
+    color: white;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+JAVASCRIPT
 
 function openModal(element) {
     const modal = document.getElementById("modal");
@@ -110,6 +162,7 @@ function closeModal() {
     const modal = document.getElementById("modal");
     modal.style.display = "none";
 }
+
 ```
 # OUTPUT:
 ![alt text](<Screenshot 2025-05-07 185726.png>)
