@@ -166,7 +166,8 @@ function closeModal() {
 ```
 # OUTPUT:
 ![alt text](<Screenshot 2025-05-07 185726.png>)
-![alt text](<Screenshot 2025-05-07 185739.png>)
+![j](https://github.com/user-attachments/assets/b2b24676-03d1-4a3b-ac5d-5cf182ac187e)
+
 
 # RESULT:
 The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
